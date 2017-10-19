@@ -1,5 +1,5 @@
-PRG            =digit_counter
-TST            =button_test
+PRG            =rotary_sel
+TST            =rotary_test
 
 OBJ            = $(PRG).o
 TST_OBJ        = $(TST).o #hd44780.o

@@ -1,0 +1,1482 @@
+
+rotary_sel.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000008c  00800100  00000756  000007ea  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000756  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000001f  0080018c  0080018c  00000876  2**0
+                  ALLOC
+  3 .stab         0000126c  00000000  00000000  00000878  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000e1a  00000000  00000000  00001ae4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .comment      00000011  00000000  00000000  000028fe  2**0
+                  CONTENTS, READONLY
+  6 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00002910  2**2
+                  CONTENTS, READONLY
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e6 e5       	ldi	r30, 0x56	; 86
+  a0:	f7 e0       	ldi	r31, 0x07	; 7
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	ac 38       	cpi	r26, 0x8C	; 140
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	21 e0       	ldi	r18, 0x01	; 1
+  b4:	ac e8       	ldi	r26, 0x8C	; 140
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	ab 3a       	cpi	r26, 0xAB	; 171
+  be:	b2 07       	cpc	r27, r18
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 69 02 	call	0x4d2	; 0x4d2 <main>
+  c6:	0c 94 a9 03 	jmp	0x752	; 0x752 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <spi_init>:
+    0b10001110, // F
+    0b11111111, // Blank
+};
+
+void spi_init(void){
+    DDRB |= 0x07;
+  ce:	87 b3       	in	r24, 0x17	; 23
+  d0:	87 60       	ori	r24, 0x07	; 7
+  d2:	87 bb       	out	0x17, r24	; 23
+    SPCR |= (1<<SPE) | (1<<MSTR);
+  d4:	8d b1       	in	r24, 0x0d	; 13
+  d6:	80 65       	ori	r24, 0x50	; 80
+  d8:	8d b9       	out	0x0d, r24	; 13
+    SPSR |= (1<<SPI2X);
+  da:	70 9a       	sbi	0x0e, 0	; 14
+  dc:	08 95       	ret
+
+000000de <spi_read>:
+}
+
+uint8_t spi_read(void){
+    PORTC &= ~(1<<PC1);
+  de:	a9 98       	cbi	0x15, 1	; 21
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  e0:	85 e3       	ldi	r24, 0x35	; 53
+  e2:	8a 95       	dec	r24
+  e4:	f1 f7       	brne	.-4      	; 0xe2 <spi_read+0x4>
+  e6:	00 00       	nop
+    _delay_us(10);
+    PORTC |= (1<<PC1);
+  e8:	a9 9a       	sbi	0x15, 1	; 21
+    SPDR = 0x00;
+  ea:	1f b8       	out	0x0f, r1	; 15
+    while (bit_is_clear(SPSR,SPIF)){}
+  ec:	77 9b       	sbis	0x0e, 7	; 14
+  ee:	fe cf       	rjmp	.-4      	; 0xec <spi_read+0xe>
+    return(SPDR);
+  f0:	8f b1       	in	r24, 0x0f	; 15
+}
+  f2:	08 95       	ret
+
+000000f4 <tcnt2_init>:
+
+void tcnt2_init(void){
+    ASSR |= (1<<AS0);
+  f4:	80 b7       	in	r24, 0x30	; 48
+  f6:	88 60       	ori	r24, 0x08	; 8
+  f8:	80 bf       	out	0x30, r24	; 48
+    TCCR2 |= (1<<WGM21) | (1<<WGM20) | (1<<COM21) | (1<<CS20) | (1<<COM20); //Fast PWM mode
+  fa:	85 b5       	in	r24, 0x25	; 37
+  fc:	89 67       	ori	r24, 0x79	; 121
+  fe:	85 bd       	out	0x25, r24	; 37
+ 100:	08 95       	ret
+
+00000102 <serial_update>:
+}
+
+uint8_t serial_update(uint8_t value){
+    // Write an 8-bit value to the bar graph and return the encoder values
+    PORTC &= ~((1<<PC2)|(1<<PC1));
+ 102:	95 b3       	in	r25, 0x15	; 21
+ 104:	99 7f       	andi	r25, 0xF9	; 249
+ 106:	95 bb       	out	0x15, r25	; 21
+ 108:	95 e0       	ldi	r25, 0x05	; 5
+ 10a:	9a 95       	dec	r25
+ 10c:	f1 f7       	brne	.-4      	; 0x10a <serial_update+0x8>
+ 10e:	00 00       	nop
+    _delay_us(1);
+    PORTC |= (1<<PC1);
+ 110:	a9 9a       	sbi	0x15, 1	; 21
+    SPDR = value;
+ 112:	8f b9       	out	0x0f, r24	; 15
+    while (bit_is_clear(SPSR,SPIF)){}
+ 114:	77 9b       	sbis	0x0e, 7	; 14
+ 116:	fe cf       	rjmp	.-4      	; 0x114 <serial_update+0x12>
+    PORTB |= (1<<PB0);
+ 118:	c0 9a       	sbi	0x18, 0	; 24
+    PORTB &= ~(1<<PB0);
+ 11a:	c0 98       	cbi	0x18, 0	; 24
+    PORTC |= (1<<PC2);
+ 11c:	aa 9a       	sbi	0x15, 2	; 21
+    return(SPDR);
+ 11e:	8f b1       	in	r24, 0x0f	; 15
+}
+ 120:	08 95       	ret
+
+00000122 <chk_buttons>:
+
+uint8_t chk_buttons(uint8_t button) {
+ 122:	48 2f       	mov	r20, r24
+
+    // Button states
+    static uint16_t state[] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+    // Check the button's state
+    state[button] = (state[button] << 1) | (!bit_is_clear(PINA, button)) | 0xE000;
+ 124:	e8 2f       	mov	r30, r24
+ 126:	f0 e0       	ldi	r31, 0x00	; 0
+ 128:	99 b3       	in	r25, 0x19	; 25
+ 12a:	ee 0f       	add	r30, r30
+ 12c:	ff 1f       	adc	r31, r31
+ 12e:	e5 56       	subi	r30, 0x65	; 101
+ 130:	fe 4f       	sbci	r31, 0xFE	; 254
+ 132:	20 81       	ld	r18, Z
+ 134:	31 81       	ldd	r19, Z+1	; 0x01
+ 136:	22 0f       	add	r18, r18
+ 138:	33 1f       	adc	r19, r19
+ 13a:	30 6e       	ori	r19, 0xE0	; 224
+ 13c:	89 2f       	mov	r24, r25
+ 13e:	90 e0       	ldi	r25, 0x00	; 0
+ 140:	02 c0       	rjmp	.+4      	; 0x146 <chk_buttons+0x24>
+ 142:	95 95       	asr	r25
+ 144:	87 95       	ror	r24
+ 146:	4a 95       	dec	r20
+ 148:	e2 f7       	brpl	.-8      	; 0x142 <chk_buttons+0x20>
+ 14a:	81 70       	andi	r24, 0x01	; 1
+ 14c:	99 27       	eor	r25, r25
+ 14e:	28 2b       	or	r18, r24
+ 150:	39 2b       	or	r19, r25
+ 152:	31 83       	std	Z+1, r19	; 0x01
+ 154:	20 83       	st	Z, r18
+
+    // If the button has been pressed the last 12 times it has been checked, return true
+    if (state[button] == 0xF000){return 1;}
+ 156:	81 e0       	ldi	r24, 0x01	; 1
+ 158:	21 15       	cp	r18, r1
+ 15a:	30 4f       	sbci	r19, 0xF0	; 240
+ 15c:	09 f0       	breq	.+2      	; 0x160 <chk_buttons+0x3e>
+ 15e:	80 e0       	ldi	r24, 0x00	; 0
+    return 0;
+}
+ 160:	08 95       	ret
+
+00000162 <segsum>:
+    uint8_t tous = 0;
+    uint8_t huns = 0;
+    uint8_t tens = 0;
+    uint8_t ones = 0;
+
+    while (sum >= 1000) {
+ 162:	88 3e       	cpi	r24, 0xE8	; 232
+ 164:	23 e0       	ldi	r18, 0x03	; 3
+ 166:	92 07       	cpc	r25, r18
+ 168:	90 f1       	brcs	.+100    	; 0x1ce <segsum+0x6c>
+ 16a:	20 e0       	ldi	r18, 0x00	; 0
+        sum -= 1000;
+ 16c:	88 5e       	subi	r24, 0xE8	; 232
+ 16e:	93 40       	sbci	r25, 0x03	; 3
+        tous++;
+ 170:	2f 5f       	subi	r18, 0xFF	; 255
+    uint8_t tous = 0;
+    uint8_t huns = 0;
+    uint8_t tens = 0;
+    uint8_t ones = 0;
+
+    while (sum >= 1000) {
+ 172:	88 3e       	cpi	r24, 0xE8	; 232
+ 174:	33 e0       	ldi	r19, 0x03	; 3
+ 176:	93 07       	cpc	r25, r19
+ 178:	c8 f7       	brcc	.-14     	; 0x16c <segsum+0xa>
+        sum -= 1000;
+        tous++;
+    }
+    while (sum >= 100) {
+ 17a:	30 e0       	ldi	r19, 0x00	; 0
+ 17c:	84 36       	cpi	r24, 0x64	; 100
+ 17e:	91 05       	cpc	r25, r1
+ 180:	30 f0       	brcs	.+12     	; 0x18e <segsum+0x2c>
+        sum -= 100;
+ 182:	84 56       	subi	r24, 0x64	; 100
+ 184:	91 09       	sbc	r25, r1
+        huns++;
+ 186:	3f 5f       	subi	r19, 0xFF	; 255
+
+    while (sum >= 1000) {
+        sum -= 1000;
+        tous++;
+    }
+    while (sum >= 100) {
+ 188:	84 36       	cpi	r24, 0x64	; 100
+ 18a:	91 05       	cpc	r25, r1
+ 18c:	d0 f7       	brcc	.-12     	; 0x182 <segsum+0x20>
+        sum -= 100;
+        huns++;
+    }
+    while (sum >= 10) {
+ 18e:	40 e0       	ldi	r20, 0x00	; 0
+ 190:	8a 30       	cpi	r24, 0x0A	; 10
+ 192:	91 05       	cpc	r25, r1
+ 194:	28 f0       	brcs	.+10     	; 0x1a0 <segsum+0x3e>
+        sum -= 10;
+ 196:	0a 97       	sbiw	r24, 0x0a	; 10
+        tens++;
+ 198:	4f 5f       	subi	r20, 0xFF	; 255
+    }
+    while (sum >= 100) {
+        sum -= 100;
+        huns++;
+    }
+    while (sum >= 10) {
+ 19a:	8a 30       	cpi	r24, 0x0A	; 10
+ 19c:	91 05       	cpc	r25, r1
+ 19e:	d8 f7       	brcc	.-10     	; 0x196 <segsum+0x34>
+        sum -= 10;
+        tens++;
+    }
+    while (sum >= 1) {
+ 1a0:	00 97       	sbiw	r24, 0x00	; 0
+ 1a2:	b9 f0       	breq	.+46     	; 0x1d2 <segsum+0x70>
+        sum -= 1;
+        ones++;
+    }
+
+    // Leading zero suppression. Note that '0x10' is blank
+    if (tous == 0){
+ 1a4:	21 11       	cpse	r18, r1
+ 1a6:	07 c0       	rjmp	.+14     	; 0x1b6 <segsum+0x54>
+        tous = 0x10;
+        if (huns == 0){
+ 1a8:	31 11       	cpse	r19, r1
+ 1aa:	0f c0       	rjmp	.+30     	; 0x1ca <segsum+0x68>
+            huns = 0x10;
+            if (tens == 0){tens = 0x10;}
+ 1ac:	41 11       	cpse	r20, r1
+ 1ae:	0c c0       	rjmp	.+24     	; 0x1c8 <segsum+0x66>
+ 1b0:	40 e1       	ldi	r20, 0x10	; 16
+
+    // Leading zero suppression. Note that '0x10' is blank
+    if (tous == 0){
+        tous = 0x10;
+        if (huns == 0){
+            huns = 0x10;
+ 1b2:	30 e1       	ldi	r19, 0x10	; 16
+        ones++;
+    }
+
+    // Leading zero suppression. Note that '0x10' is blank
+    if (tous == 0){
+        tous = 0x10;
+ 1b4:	20 e1       	ldi	r18, 0x10	; 16
+        if (huns == 0){
+            huns = 0x10;
+            if (tens == 0){tens = 0x10;}
+        }
+    }
+    segment_data[4] = tous;
+ 1b6:	20 93 90 01 	sts	0x0190, r18
+    segment_data[3] = huns;
+ 1ba:	30 93 8f 01 	sts	0x018F, r19
+    segment_data[1] = tens;
+ 1be:	40 93 8d 01 	sts	0x018D, r20
+    segment_data[0] = ones;
+ 1c2:	80 93 8c 01 	sts	0x018C, r24
+ 1c6:	08 95       	ret
+
+    // Leading zero suppression. Note that '0x10' is blank
+    if (tous == 0){
+        tous = 0x10;
+        if (huns == 0){
+            huns = 0x10;
+ 1c8:	30 e1       	ldi	r19, 0x10	; 16
+        ones++;
+    }
+
+    // Leading zero suppression. Note that '0x10' is blank
+    if (tous == 0){
+        tous = 0x10;
+ 1ca:	20 e1       	ldi	r18, 0x10	; 16
+ 1cc:	f4 cf       	rjmp	.-24     	; 0x1b6 <segsum+0x54>
+}
+
+void segsum(uint16_t sum){
+    // convert the 16-bit count into the base-10 display code
+
+    uint8_t tous = 0;
+ 1ce:	20 e0       	ldi	r18, 0x00	; 0
+ 1d0:	d4 cf       	rjmp	.-88     	; 0x17a <segsum+0x18>
+    }
+    while (sum >= 10) {
+        sum -= 10;
+        tens++;
+    }
+    while (sum >= 1) {
+ 1d2:	80 e0       	ldi	r24, 0x00	; 0
+ 1d4:	e7 cf       	rjmp	.-50     	; 0x1a4 <segsum+0x42>
+
+000001d6 <decode_enc>:
+    static uint8_t encB_ccw;
+    
+    // Check the bit pattern for the two encoders to determine
+    // what state both encoders are in. 
+        //Check for bit 1 set
+        if (encoders & 0x1){
+ 1d6:	80 ff       	sbrs	r24, 0
+ 1d8:	46 c0       	rjmp	.+140    	; 0x266 <decode_enc+0x90>
+            if(encoders & 0x2){encA_state=0x3;}
+ 1da:	81 ff       	sbrs	r24, 1
+ 1dc:	6a c0       	rjmp	.+212    	; 0x2b2 <decode_enc+0xdc>
+ 1de:	93 e0       	ldi	r25, 0x03	; 3
+ 1e0:	90 93 9a 01 	sts	0x019A, r25
+        if (!(encoders & 0x1)){
+            if(encoders & 0x2){encA_state=0x2;}
+            if(!(encoders & 0x2)){encA_state=0x0;}
+        }
+        // Check for bit 3 set
+        if (encoders & 0x4){
+ 1e4:	82 fd       	sbrc	r24, 2
+ 1e6:	47 c0       	rjmp	.+142    	; 0x276 <decode_enc+0xa0>
+            if(encoders & 0x8){encB_state=0x3;}
+            if(!(encoders & 0x8)){encB_state=0x1;}
+        }
+        // Check for bit 3 clear
+        if (!(encoders & 0x4)){
+            if(encoders & 0x8){encB_state=0x2;}
+ 1e8:	83 fd       	sbrc	r24, 3
+ 1ea:	c3 c0       	rjmp	.+390    	; 0x372 <decode_enc+0x19c>
+            if(!(encoders & 0x8)){encB_state=0x0;}
+ 1ec:	10 92 99 01 	sts	0x0199, r1
+        }
+
+    // Use the state information to determine whether the encoder
+    // is rotating clockwise or counter-clockwise. 
+        switch (encA_state){
+ 1f0:	92 30       	cpi	r25, 0x02	; 2
+ 1f2:	09 f4       	brne	.+2      	; 0x1f6 <decode_enc+0x20>
+ 1f4:	48 c0       	rjmp	.+144    	; 0x286 <decode_enc+0xb0>
+ 1f6:	93 30       	cpi	r25, 0x03	; 3
+ 1f8:	09 f4       	brne	.+2      	; 0x1fc <decode_enc+0x26>
+ 1fa:	67 c0       	rjmp	.+206    	; 0x2ca <decode_enc+0xf4>
+                if (encA_prev == 0x1){encA_ccw++;}
+                if (encA_prev == 0x2){encA_cw++;}
+                encA_prev = 0x0;
+                break;
+            case 0x1:
+                if (encA_prev == 0x0){encA_cw++;}
+ 1fc:	80 91 98 01 	lds	r24, 0x0198
+            if(!(encoders & 0x8)){encB_state=0x0;}
+        }
+
+    // Use the state information to determine whether the encoder
+    // is rotating clockwise or counter-clockwise. 
+        switch (encA_state){
+ 200:	91 30       	cpi	r25, 0x01	; 1
+ 202:	09 f4       	brne	.+2      	; 0x206 <decode_enc+0x30>
+ 204:	bd c0       	rjmp	.+378    	; 0x380 <decode_enc+0x1aa>
+            case 0x0:
+                if (encA_prev == 0x1){encA_ccw++;}
+ 206:	81 30       	cpi	r24, 0x01	; 1
+ 208:	09 f4       	brne	.+2      	; 0x20c <decode_enc+0x36>
+ 20a:	e1 c0       	rjmp	.+450    	; 0x3ce <decode_enc+0x1f8>
+                if (encA_prev == 0x2){encA_cw++;}
+ 20c:	82 30       	cpi	r24, 0x02	; 2
+ 20e:	09 f4       	brne	.+2      	; 0x212 <decode_enc+0x3c>
+ 210:	2b c1       	rjmp	.+598    	; 0x468 <decode_enc+0x292>
+ 212:	40 91 97 01 	lds	r20, 0x0197
+ 216:	90 91 96 01 	lds	r25, 0x0196
+                encA_prev = 0x0;
+ 21a:	10 92 98 01 	sts	0x0198, r1
+                break;
+        }
+        
+    // Use the state information to determine whether the encoder
+    // is rotating clockwise or counter-clockwise. 
+        switch (encB_state){
+ 21e:	80 91 99 01 	lds	r24, 0x0199
+ 222:	81 30       	cpi	r24, 0x01	; 1
+ 224:	09 f0       	breq	.+2      	; 0x228 <decode_enc+0x52>
+ 226:	67 c0       	rjmp	.+206    	; 0x2f6 <decode_enc+0x120>
+                if (encB_prev == 0x1){encB_ccw++;}
+                if (encB_prev == 0x2){encB_cw++;}
+                encB_prev = 0x0;
+                break;
+            case 0x1:
+                if (encB_prev == 0x0){encB_cw++;}
+ 228:	80 91 95 01 	lds	r24, 0x0195
+ 22c:	81 11       	cpse	r24, r1
+ 22e:	12 c1       	rjmp	.+548    	; 0x454 <decode_enc+0x27e>
+ 230:	30 91 93 01 	lds	r19, 0x0193
+ 234:	3f 5f       	subi	r19, 0xFF	; 255
+ 236:	30 93 93 01 	sts	0x0193, r19
+ 23a:	20 91 94 01 	lds	r18, 0x0194
+                if (encB_prev == 0x3){encB_ccw++;}
+                encB_prev = 0x1;
+ 23e:	81 e0       	ldi	r24, 0x01	; 1
+ 240:	80 93 95 01 	sts	0x0195, r24
+                break;
+        }
+
+    // Adjust the number of steps for each encoder to coincide with 
+    // the positive retention in the encoder's rotation.
+        if (encA_cw >= 0x4){
+ 244:	94 30       	cpi	r25, 0x04	; 4
+ 246:	08 f4       	brcc	.+2      	; 0x24a <decode_enc+0x74>
+ 248:	66 c0       	rjmp	.+204    	; 0x316 <decode_enc+0x140>
+            count+=jump;
+ 24a:	80 91 91 01 	lds	r24, 0x0191
+ 24e:	90 91 92 01 	lds	r25, 0x0192
+ 252:	86 0f       	add	r24, r22
+ 254:	91 1d       	adc	r25, r1
+            if (count > 1023){count -= 1024;}
+ 256:	81 15       	cp	r24, r1
+ 258:	54 e0       	ldi	r21, 0x04	; 4
+ 25a:	95 07       	cpc	r25, r21
+ 25c:	08 f0       	brcs	.+2      	; 0x260 <decode_enc+0x8a>
+ 25e:	94 50       	subi	r25, 0x04	; 4
+            encA_cw = 0;
+ 260:	10 92 96 01 	sts	0x0196, r1
+ 264:	5c c0       	rjmp	.+184    	; 0x31e <decode_enc+0x148>
+            if(encoders & 0x2){encA_state=0x3;}
+            if(!(encoders & 0x2)){encA_state=0x1;}
+        }
+        // Check for bit 1 clear
+        if (!(encoders & 0x1)){
+            if(encoders & 0x2){encA_state=0x2;}
+ 266:	98 2f       	mov	r25, r24
+ 268:	92 70       	andi	r25, 0x02	; 2
+ 26a:	81 fd       	sbrc	r24, 1
+ 26c:	1e c0       	rjmp	.+60     	; 0x2aa <decode_enc+0xd4>
+            if(!(encoders & 0x2)){encA_state=0x0;}
+ 26e:	10 92 9a 01 	sts	0x019A, r1
+        }
+        // Check for bit 3 set
+        if (encoders & 0x4){
+ 272:	82 ff       	sbrs	r24, 2
+ 274:	b9 cf       	rjmp	.-142    	; 0x1e8 <decode_enc+0x12>
+            if(encoders & 0x8){encB_state=0x3;}
+ 276:	83 ff       	sbrs	r24, 3
+ 278:	20 c0       	rjmp	.+64     	; 0x2ba <decode_enc+0xe4>
+ 27a:	83 e0       	ldi	r24, 0x03	; 3
+ 27c:	80 93 99 01 	sts	0x0199, r24
+            if(!(encoders & 0x8)){encB_state=0x0;}
+        }
+
+    // Use the state information to determine whether the encoder
+    // is rotating clockwise or counter-clockwise. 
+        switch (encA_state){
+ 280:	92 30       	cpi	r25, 0x02	; 2
+ 282:	09 f0       	breq	.+2      	; 0x286 <decode_enc+0xb0>
+ 284:	b8 cf       	rjmp	.-144    	; 0x1f6 <decode_enc+0x20>
+                if (encA_prev == 0x0){encA_cw++;}
+                if (encA_prev == 0x3){encA_ccw++;}
+                encA_prev = 0x1;
+                break;
+            case 0x2:
+                if (encA_prev == 0x3){encA_cw++;}
+ 286:	80 91 98 01 	lds	r24, 0x0198
+ 28a:	83 30       	cpi	r24, 0x03	; 3
+ 28c:	09 f4       	brne	.+2      	; 0x290 <decode_enc+0xba>
+ 28e:	97 c0       	rjmp	.+302    	; 0x3be <decode_enc+0x1e8>
+                if (encA_prev == 0x0){encA_ccw++;}
+ 290:	40 91 97 01 	lds	r20, 0x0197
+ 294:	81 11       	cpse	r24, r1
+ 296:	03 c0       	rjmp	.+6      	; 0x29e <decode_enc+0xc8>
+ 298:	4f 5f       	subi	r20, 0xFF	; 255
+ 29a:	40 93 97 01 	sts	0x0197, r20
+ 29e:	90 91 96 01 	lds	r25, 0x0196
+                encA_prev = 0x2;
+ 2a2:	82 e0       	ldi	r24, 0x02	; 2
+ 2a4:	80 93 98 01 	sts	0x0198, r24
+                break;
+ 2a8:	21 c0       	rjmp	.+66     	; 0x2ec <decode_enc+0x116>
+            if(encoders & 0x2){encA_state=0x3;}
+            if(!(encoders & 0x2)){encA_state=0x1;}
+        }
+        // Check for bit 1 clear
+        if (!(encoders & 0x1)){
+            if(encoders & 0x2){encA_state=0x2;}
+ 2aa:	92 e0       	ldi	r25, 0x02	; 2
+ 2ac:	90 93 9a 01 	sts	0x019A, r25
+ 2b0:	e0 cf       	rjmp	.-64     	; 0x272 <decode_enc+0x9c>
+    // Check the bit pattern for the two encoders to determine
+    // what state both encoders are in. 
+        //Check for bit 1 set
+        if (encoders & 0x1){
+            if(encoders & 0x2){encA_state=0x3;}
+            if(!(encoders & 0x2)){encA_state=0x1;}
+ 2b2:	91 e0       	ldi	r25, 0x01	; 1
+ 2b4:	90 93 9a 01 	sts	0x019A, r25
+ 2b8:	dc cf       	rjmp	.-72     	; 0x272 <decode_enc+0x9c>
+            if(!(encoders & 0x2)){encA_state=0x0;}
+        }
+        // Check for bit 3 set
+        if (encoders & 0x4){
+            if(encoders & 0x8){encB_state=0x3;}
+            if(!(encoders & 0x8)){encB_state=0x1;}
+ 2ba:	81 e0       	ldi	r24, 0x01	; 1
+ 2bc:	80 93 99 01 	sts	0x0199, r24
+            if(!(encoders & 0x8)){encB_state=0x0;}
+        }
+
+    // Use the state information to determine whether the encoder
+    // is rotating clockwise or counter-clockwise. 
+        switch (encA_state){
+ 2c0:	92 30       	cpi	r25, 0x02	; 2
+ 2c2:	09 f3       	breq	.-62     	; 0x286 <decode_enc+0xb0>
+ 2c4:	93 30       	cpi	r25, 0x03	; 3
+ 2c6:	09 f0       	breq	.+2      	; 0x2ca <decode_enc+0xf4>
+ 2c8:	99 cf       	rjmp	.-206    	; 0x1fc <decode_enc+0x26>
+                if (encA_prev == 0x3){encA_cw++;}
+                if (encA_prev == 0x0){encA_ccw++;}
+                encA_prev = 0x2;
+                break;
+            case 0x3:
+                if (encA_prev == 0x1){encA_cw++;}
+ 2ca:	80 91 98 01 	lds	r24, 0x0198
+ 2ce:	81 30       	cpi	r24, 0x01	; 1
+ 2d0:	09 f4       	brne	.+2      	; 0x2d4 <decode_enc+0xfe>
+ 2d2:	6d c0       	rjmp	.+218    	; 0x3ae <decode_enc+0x1d8>
+                if (encA_prev == 0x2){encA_ccw++;}
+ 2d4:	40 91 97 01 	lds	r20, 0x0197
+ 2d8:	82 30       	cpi	r24, 0x02	; 2
+ 2da:	19 f4       	brne	.+6      	; 0x2e2 <decode_enc+0x10c>
+ 2dc:	4f 5f       	subi	r20, 0xFF	; 255
+ 2de:	40 93 97 01 	sts	0x0197, r20
+ 2e2:	90 91 96 01 	lds	r25, 0x0196
+                encA_prev = 0x3;
+ 2e6:	83 e0       	ldi	r24, 0x03	; 3
+ 2e8:	80 93 98 01 	sts	0x0198, r24
+                break;
+        }
+        
+    // Use the state information to determine whether the encoder
+    // is rotating clockwise or counter-clockwise. 
+        switch (encB_state){
+ 2ec:	80 91 99 01 	lds	r24, 0x0199
+ 2f0:	81 30       	cpi	r24, 0x01	; 1
+ 2f2:	09 f4       	brne	.+2      	; 0x2f6 <decode_enc+0x120>
+ 2f4:	99 cf       	rjmp	.-206    	; 0x228 <decode_enc+0x52>
+ 2f6:	81 30       	cpi	r24, 0x01	; 1
+ 2f8:	08 f4       	brcc	.+2      	; 0x2fc <decode_enc+0x126>
+ 2fa:	9c c0       	rjmp	.+312    	; 0x434 <decode_enc+0x25e>
+ 2fc:	82 30       	cpi	r24, 0x02	; 2
+ 2fe:	09 f4       	brne	.+2      	; 0x302 <decode_enc+0x12c>
+ 300:	88 c0       	rjmp	.+272    	; 0x412 <decode_enc+0x23c>
+ 302:	83 30       	cpi	r24, 0x03	; 3
+ 304:	09 f4       	brne	.+2      	; 0x308 <decode_enc+0x132>
+ 306:	75 c0       	rjmp	.+234    	; 0x3f2 <decode_enc+0x21c>
+ 308:	30 91 93 01 	lds	r19, 0x0193
+ 30c:	20 91 94 01 	lds	r18, 0x0194
+                break;
+        }
+
+    // Adjust the number of steps for each encoder to coincide with 
+    // the positive retention in the encoder's rotation.
+        if (encA_cw >= 0x4){
+ 310:	94 30       	cpi	r25, 0x04	; 4
+ 312:	08 f0       	brcs	.+2      	; 0x316 <decode_enc+0x140>
+ 314:	9a cf       	rjmp	.-204    	; 0x24a <decode_enc+0x74>
+ 316:	80 91 91 01 	lds	r24, 0x0191
+ 31a:	90 91 92 01 	lds	r25, 0x0192
+            count+=jump;
+            if (count > 1023){count -= 1024;}
+            encA_cw = 0;
+        }
+        if (encA_ccw >= 0x4){
+ 31e:	44 30       	cpi	r20, 0x04	; 4
+ 320:	48 f0       	brcs	.+18     	; 0x334 <decode_enc+0x15e>
+            count-=jump;
+ 322:	86 1b       	sub	r24, r22
+ 324:	91 09       	sbc	r25, r1
+            if (count > 1023){count -= 1024;}
+ 326:	81 15       	cp	r24, r1
+ 328:	44 e0       	ldi	r20, 0x04	; 4
+ 32a:	94 07       	cpc	r25, r20
+ 32c:	08 f0       	brcs	.+2      	; 0x330 <decode_enc+0x15a>
+ 32e:	94 50       	subi	r25, 0x04	; 4
+            encA_ccw = 0;
+ 330:	10 92 97 01 	sts	0x0197, r1
+        }
+        if (encB_cw >= 0x4){
+ 334:	34 30       	cpi	r19, 0x04	; 4
+ 336:	58 f0       	brcs	.+22     	; 0x34e <decode_enc+0x178>
+            bright_step++;
+ 338:	30 91 11 01 	lds	r19, 0x0111
+ 33c:	41 e0       	ldi	r20, 0x01	; 1
+ 33e:	43 0f       	add	r20, r19
+            if (bright_step > 0x79){bright_step = bright_step - 0x79;}
+ 340:	4a 37       	cpi	r20, 0x7A	; 122
+ 342:	08 f0       	brcs	.+2      	; 0x346 <decode_enc+0x170>
+ 344:	52 c0       	rjmp	.+164    	; 0x3ea <decode_enc+0x214>
+            count-=jump;
+            if (count > 1023){count -= 1024;}
+            encA_ccw = 0;
+        }
+        if (encB_cw >= 0x4){
+            bright_step++;
+ 346:	40 93 11 01 	sts	0x0111, r20
+            if (bright_step > 0x79){bright_step = bright_step - 0x79;}
+            encB_cw = 0;
+ 34a:	10 92 93 01 	sts	0x0193, r1
+        }
+        if (encB_ccw >= 0x4){
+ 34e:	24 30       	cpi	r18, 0x04	; 4
+ 350:	50 f0       	brcs	.+20     	; 0x366 <decode_enc+0x190>
+            bright_step--;
+ 352:	20 91 11 01 	lds	r18, 0x0111
+ 356:	21 50       	subi	r18, 0x01	; 1
+            if (bright_step == 0x00){bright_step = 0x79;}
+ 358:	09 f0       	breq	.+2      	; 0x35c <decode_enc+0x186>
+ 35a:	41 c0       	rjmp	.+130    	; 0x3de <decode_enc+0x208>
+ 35c:	29 e7       	ldi	r18, 0x79	; 121
+ 35e:	20 93 11 01 	sts	0x0111, r18
+            if (bright_step > 0x79){bright_step = 0x00;}
+            encB_ccw = 0;
+ 362:	10 92 94 01 	sts	0x0194, r1
+        }
+
+    // Ensure the count never goes above 1023
+        count = count & 0x03FF;
+ 366:	93 70       	andi	r25, 0x03	; 3
+ 368:	90 93 92 01 	sts	0x0192, r25
+ 36c:	80 93 91 01 	sts	0x0191, r24
+ 370:	08 95       	ret
+            if(encoders & 0x8){encB_state=0x3;}
+            if(!(encoders & 0x8)){encB_state=0x1;}
+        }
+        // Check for bit 3 clear
+        if (!(encoders & 0x4)){
+            if(encoders & 0x8){encB_state=0x2;}
+ 372:	82 e0       	ldi	r24, 0x02	; 2
+ 374:	80 93 99 01 	sts	0x0199, r24
+            if(!(encoders & 0x8)){encB_state=0x0;}
+        }
+
+    // Use the state information to determine whether the encoder
+    // is rotating clockwise or counter-clockwise. 
+        switch (encA_state){
+ 378:	92 30       	cpi	r25, 0x02	; 2
+ 37a:	09 f0       	breq	.+2      	; 0x37e <decode_enc+0x1a8>
+ 37c:	3c cf       	rjmp	.-392    	; 0x1f6 <decode_enc+0x20>
+ 37e:	83 cf       	rjmp	.-250    	; 0x286 <decode_enc+0xb0>
+                if (encA_prev == 0x1){encA_ccw++;}
+                if (encA_prev == 0x2){encA_cw++;}
+                encA_prev = 0x0;
+                break;
+            case 0x1:
+                if (encA_prev == 0x0){encA_cw++;}
+ 380:	88 23       	and	r24, r24
+ 382:	69 f0       	breq	.+26     	; 0x39e <decode_enc+0x1c8>
+                if (encA_prev == 0x3){encA_ccw++;}
+ 384:	40 91 97 01 	lds	r20, 0x0197
+ 388:	83 30       	cpi	r24, 0x03	; 3
+ 38a:	19 f4       	brne	.+6      	; 0x392 <decode_enc+0x1bc>
+ 38c:	4f 5f       	subi	r20, 0xFF	; 255
+ 38e:	40 93 97 01 	sts	0x0197, r20
+ 392:	90 91 96 01 	lds	r25, 0x0196
+                encA_prev = 0x1;
+ 396:	81 e0       	ldi	r24, 0x01	; 1
+ 398:	80 93 98 01 	sts	0x0198, r24
+                break;
+ 39c:	a7 cf       	rjmp	.-178    	; 0x2ec <decode_enc+0x116>
+                if (encA_prev == 0x1){encA_ccw++;}
+                if (encA_prev == 0x2){encA_cw++;}
+                encA_prev = 0x0;
+                break;
+            case 0x1:
+                if (encA_prev == 0x0){encA_cw++;}
+ 39e:	90 91 96 01 	lds	r25, 0x0196
+ 3a2:	9f 5f       	subi	r25, 0xFF	; 255
+ 3a4:	90 93 96 01 	sts	0x0196, r25
+ 3a8:	40 91 97 01 	lds	r20, 0x0197
+ 3ac:	f4 cf       	rjmp	.-24     	; 0x396 <decode_enc+0x1c0>
+                if (encA_prev == 0x3){encA_cw++;}
+                if (encA_prev == 0x0){encA_ccw++;}
+                encA_prev = 0x2;
+                break;
+            case 0x3:
+                if (encA_prev == 0x1){encA_cw++;}
+ 3ae:	90 91 96 01 	lds	r25, 0x0196
+ 3b2:	9f 5f       	subi	r25, 0xFF	; 255
+ 3b4:	90 93 96 01 	sts	0x0196, r25
+ 3b8:	40 91 97 01 	lds	r20, 0x0197
+ 3bc:	94 cf       	rjmp	.-216    	; 0x2e6 <decode_enc+0x110>
+                if (encA_prev == 0x0){encA_cw++;}
+                if (encA_prev == 0x3){encA_ccw++;}
+                encA_prev = 0x1;
+                break;
+            case 0x2:
+                if (encA_prev == 0x3){encA_cw++;}
+ 3be:	90 91 96 01 	lds	r25, 0x0196
+ 3c2:	9f 5f       	subi	r25, 0xFF	; 255
+ 3c4:	90 93 96 01 	sts	0x0196, r25
+ 3c8:	40 91 97 01 	lds	r20, 0x0197
+ 3cc:	6a cf       	rjmp	.-300    	; 0x2a2 <decode_enc+0xcc>
+
+    // Use the state information to determine whether the encoder
+    // is rotating clockwise or counter-clockwise. 
+        switch (encA_state){
+            case 0x0:
+                if (encA_prev == 0x1){encA_ccw++;}
+ 3ce:	40 91 97 01 	lds	r20, 0x0197
+ 3d2:	4f 5f       	subi	r20, 0xFF	; 255
+ 3d4:	40 93 97 01 	sts	0x0197, r20
+ 3d8:	90 91 96 01 	lds	r25, 0x0196
+ 3dc:	1e cf       	rjmp	.-452    	; 0x21a <decode_enc+0x44>
+            encB_cw = 0;
+        }
+        if (encB_ccw >= 0x4){
+            bright_step--;
+            if (bright_step == 0x00){bright_step = 0x79;}
+            if (bright_step > 0x79){bright_step = 0x00;}
+ 3de:	2a 37       	cpi	r18, 0x7A	; 122
+ 3e0:	08 f4       	brcc	.+2      	; 0x3e4 <decode_enc+0x20e>
+ 3e2:	74 c0       	rjmp	.+232    	; 0x4cc <decode_enc+0x2f6>
+ 3e4:	10 92 11 01 	sts	0x0111, r1
+ 3e8:	bc cf       	rjmp	.-136    	; 0x362 <decode_enc+0x18c>
+            if (count > 1023){count -= 1024;}
+            encA_ccw = 0;
+        }
+        if (encB_cw >= 0x4){
+            bright_step++;
+            if (bright_step > 0x79){bright_step = bright_step - 0x79;}
+ 3ea:	38 57       	subi	r19, 0x78	; 120
+ 3ec:	30 93 11 01 	sts	0x0111, r19
+ 3f0:	ac cf       	rjmp	.-168    	; 0x34a <decode_enc+0x174>
+                if (encB_prev == 0x3){encB_cw++;}
+                if (encB_prev == 0x0){encB_ccw++;}
+                encB_prev = 0x2;
+                break;
+            case 0x3:
+                if (encB_prev == 0x1){encB_cw++;}
+ 3f2:	80 91 95 01 	lds	r24, 0x0195
+ 3f6:	81 30       	cpi	r24, 0x01	; 1
+ 3f8:	09 f4       	brne	.+2      	; 0x3fc <decode_enc+0x226>
+ 3fa:	56 c0       	rjmp	.+172    	; 0x4a8 <decode_enc+0x2d2>
+                if (encB_prev == 0x2){encB_ccw++;}
+ 3fc:	82 30       	cpi	r24, 0x02	; 2
+ 3fe:	09 f4       	brne	.+2      	; 0x402 <decode_enc+0x22c>
+ 400:	4b c0       	rjmp	.+150    	; 0x498 <decode_enc+0x2c2>
+ 402:	30 91 93 01 	lds	r19, 0x0193
+ 406:	20 91 94 01 	lds	r18, 0x0194
+                encB_prev = 0x3;
+ 40a:	83 e0       	ldi	r24, 0x03	; 3
+ 40c:	80 93 95 01 	sts	0x0195, r24
+                break;
+ 410:	7f cf       	rjmp	.-258    	; 0x310 <decode_enc+0x13a>
+                if (encB_prev == 0x0){encB_cw++;}
+                if (encB_prev == 0x3){encB_ccw++;}
+                encB_prev = 0x1;
+                break;
+            case 0x2:
+                if (encB_prev == 0x3){encB_cw++;}
+ 412:	80 91 95 01 	lds	r24, 0x0195
+ 416:	83 30       	cpi	r24, 0x03	; 3
+ 418:	b9 f1       	breq	.+110    	; 0x488 <decode_enc+0x2b2>
+                if (encB_prev == 0x0){encB_ccw++;}
+ 41a:	81 11       	cpse	r24, r1
+ 41c:	4d c0       	rjmp	.+154    	; 0x4b8 <decode_enc+0x2e2>
+ 41e:	20 91 94 01 	lds	r18, 0x0194
+ 422:	2f 5f       	subi	r18, 0xFF	; 255
+ 424:	20 93 94 01 	sts	0x0194, r18
+ 428:	30 91 93 01 	lds	r19, 0x0193
+                encB_prev = 0x2;
+ 42c:	82 e0       	ldi	r24, 0x02	; 2
+ 42e:	80 93 95 01 	sts	0x0195, r24
+                break;
+ 432:	6e cf       	rjmp	.-292    	; 0x310 <decode_enc+0x13a>
+        
+    // Use the state information to determine whether the encoder
+    // is rotating clockwise or counter-clockwise. 
+        switch (encB_state){
+            case 0x0:
+                if (encB_prev == 0x1){encB_ccw++;}
+ 434:	80 91 95 01 	lds	r24, 0x0195
+ 438:	81 30       	cpi	r24, 0x01	; 1
+ 43a:	f1 f0       	breq	.+60     	; 0x478 <decode_enc+0x2a2>
+                if (encB_prev == 0x2){encB_cw++;}
+ 43c:	30 91 93 01 	lds	r19, 0x0193
+ 440:	82 30       	cpi	r24, 0x02	; 2
+ 442:	19 f4       	brne	.+6      	; 0x44a <decode_enc+0x274>
+ 444:	3f 5f       	subi	r19, 0xFF	; 255
+ 446:	30 93 93 01 	sts	0x0193, r19
+ 44a:	20 91 94 01 	lds	r18, 0x0194
+                encB_prev = 0x0;
+ 44e:	10 92 95 01 	sts	0x0195, r1
+                break;
+ 452:	5e cf       	rjmp	.-324    	; 0x310 <decode_enc+0x13a>
+            case 0x1:
+                if (encB_prev == 0x0){encB_cw++;}
+                if (encB_prev == 0x3){encB_ccw++;}
+ 454:	83 30       	cpi	r24, 0x03	; 3
+ 456:	a9 f5       	brne	.+106    	; 0x4c2 <decode_enc+0x2ec>
+ 458:	20 91 94 01 	lds	r18, 0x0194
+ 45c:	2f 5f       	subi	r18, 0xFF	; 255
+ 45e:	20 93 94 01 	sts	0x0194, r18
+ 462:	30 91 93 01 	lds	r19, 0x0193
+ 466:	eb ce       	rjmp	.-554    	; 0x23e <decode_enc+0x68>
+    // Use the state information to determine whether the encoder
+    // is rotating clockwise or counter-clockwise. 
+        switch (encA_state){
+            case 0x0:
+                if (encA_prev == 0x1){encA_ccw++;}
+                if (encA_prev == 0x2){encA_cw++;}
+ 468:	90 91 96 01 	lds	r25, 0x0196
+ 46c:	9f 5f       	subi	r25, 0xFF	; 255
+ 46e:	90 93 96 01 	sts	0x0196, r25
+ 472:	40 91 97 01 	lds	r20, 0x0197
+ 476:	d1 ce       	rjmp	.-606    	; 0x21a <decode_enc+0x44>
+        
+    // Use the state information to determine whether the encoder
+    // is rotating clockwise or counter-clockwise. 
+        switch (encB_state){
+            case 0x0:
+                if (encB_prev == 0x1){encB_ccw++;}
+ 478:	20 91 94 01 	lds	r18, 0x0194
+ 47c:	2f 5f       	subi	r18, 0xFF	; 255
+ 47e:	20 93 94 01 	sts	0x0194, r18
+ 482:	30 91 93 01 	lds	r19, 0x0193
+ 486:	e3 cf       	rjmp	.-58     	; 0x44e <decode_enc+0x278>
+                if (encB_prev == 0x0){encB_cw++;}
+                if (encB_prev == 0x3){encB_ccw++;}
+                encB_prev = 0x1;
+                break;
+            case 0x2:
+                if (encB_prev == 0x3){encB_cw++;}
+ 488:	30 91 93 01 	lds	r19, 0x0193
+ 48c:	3f 5f       	subi	r19, 0xFF	; 255
+ 48e:	30 93 93 01 	sts	0x0193, r19
+ 492:	20 91 94 01 	lds	r18, 0x0194
+ 496:	ca cf       	rjmp	.-108    	; 0x42c <decode_enc+0x256>
+                if (encB_prev == 0x0){encB_ccw++;}
+                encB_prev = 0x2;
+                break;
+            case 0x3:
+                if (encB_prev == 0x1){encB_cw++;}
+                if (encB_prev == 0x2){encB_ccw++;}
+ 498:	20 91 94 01 	lds	r18, 0x0194
+ 49c:	2f 5f       	subi	r18, 0xFF	; 255
+ 49e:	20 93 94 01 	sts	0x0194, r18
+ 4a2:	30 91 93 01 	lds	r19, 0x0193
+ 4a6:	b1 cf       	rjmp	.-158    	; 0x40a <decode_enc+0x234>
+                if (encB_prev == 0x3){encB_cw++;}
+                if (encB_prev == 0x0){encB_ccw++;}
+                encB_prev = 0x2;
+                break;
+            case 0x3:
+                if (encB_prev == 0x1){encB_cw++;}
+ 4a8:	30 91 93 01 	lds	r19, 0x0193
+ 4ac:	3f 5f       	subi	r19, 0xFF	; 255
+ 4ae:	30 93 93 01 	sts	0x0193, r19
+ 4b2:	20 91 94 01 	lds	r18, 0x0194
+ 4b6:	a9 cf       	rjmp	.-174    	; 0x40a <decode_enc+0x234>
+ 4b8:	30 91 93 01 	lds	r19, 0x0193
+ 4bc:	20 91 94 01 	lds	r18, 0x0194
+ 4c0:	b5 cf       	rjmp	.-150    	; 0x42c <decode_enc+0x256>
+ 4c2:	30 91 93 01 	lds	r19, 0x0193
+ 4c6:	20 91 94 01 	lds	r18, 0x0194
+ 4ca:	b9 ce       	rjmp	.-654    	; 0x23e <decode_enc+0x68>
+            bright_step++;
+            if (bright_step > 0x79){bright_step = bright_step - 0x79;}
+            encB_cw = 0;
+        }
+        if (encB_ccw >= 0x4){
+            bright_step--;
+ 4cc:	20 93 11 01 	sts	0x0111, r18
+ 4d0:	48 cf       	rjmp	.-368    	; 0x362 <decode_enc+0x18c>
+
+000004d2 <main>:
+
+    // Ensure the count never goes above 1023
+        count = count & 0x03FF;
+}
+
+uint8_t main() {
+ 4d2:	cf 93       	push	r28
+ 4d4:	df 93       	push	r29
+ 4d6:	00 d0       	rcall	.+0      	; 0x4d8 <main+0x6>
+ 4d8:	1f 92       	push	r1
+ 4da:	cd b7       	in	r28, 0x3d	; 61
+ 4dc:	de b7       	in	r29, 0x3e	; 62
+    0b10001110, // F
+    0b11111111, // Blank
+};
+
+void spi_init(void){
+    DDRB |= 0x07;
+ 4de:	87 b3       	in	r24, 0x17	; 23
+ 4e0:	87 60       	ori	r24, 0x07	; 7
+ 4e2:	87 bb       	out	0x17, r24	; 23
+    SPCR |= (1<<SPE) | (1<<MSTR);
+ 4e4:	8d b1       	in	r24, 0x0d	; 13
+ 4e6:	80 65       	ori	r24, 0x50	; 80
+ 4e8:	8d b9       	out	0x0d, r24	; 13
+    SPSR |= (1<<SPI2X);
+ 4ea:	70 9a       	sbi	0x0e, 0	; 14
+    while (bit_is_clear(SPSR,SPIF)){}
+    return(SPDR);
+}
+
+void tcnt2_init(void){
+    ASSR |= (1<<AS0);
+ 4ec:	80 b7       	in	r24, 0x30	; 48
+ 4ee:	88 60       	ori	r24, 0x08	; 8
+ 4f0:	80 bf       	out	0x30, r24	; 48
+    TCCR2 |= (1<<WGM21) | (1<<WGM20) | (1<<COM21) | (1<<CS20) | (1<<COM20); //Fast PWM mode
+ 4f2:	85 b5       	in	r24, 0x25	; 37
+ 4f4:	89 67       	ori	r24, 0x79	; 121
+ 4f6:	85 bd       	out	0x25, r24	; 37
+}
+
+uint8_t main() {
+    spi_init();
+    tcnt2_init();
+    DDRB |= (1<<PB7) | (1<<PB6) | (1<<PB5) | (1<<PB4);
+ 4f8:	87 b3       	in	r24, 0x17	; 23
+ 4fa:	80 6f       	ori	r24, 0xF0	; 240
+ 4fc:	87 bb       	out	0x17, r24	; 23
+    DDRC |= (1<<PC2) | (1<<PC1) | (1<<PC0);
+ 4fe:	84 b3       	in	r24, 0x14	; 20
+ 500:	87 60       	ori	r24, 0x07	; 7
+ 502:	84 bb       	out	0x14, r24	; 20
+    PORTB &= ~(1<<PB7);
+ 504:	c7 98       	cbi	0x18, 7	; 24
+    uint8_t encoders;
+    uint8_t mode = 0x00;
+ 506:	40 e0       	ldi	r20, 0x00	; 0
+    uint8_t modifier;
+
+    while(1){
+
+        DDRA = 0x00;
+        PORTA = 0xFF;
+ 508:	33 24       	eor	r3, r3
+ 50a:	3a 94       	dec	r3
+        _delay_us(10);
+        if (bright_step > 0x79){bright_step = bright_step - 0x79;}
+        OCR2 = BRIGHTNESS[bright_step];
+
+        // Use button 0 to toggle +2 mode
+        if (chk_buttons(0)){mode ^= 0xF0;}
+ 50c:	10 ef       	ldi	r17, 0xF0	; 240
+ 50e:	41 2e       	mov	r4, r17
+
+        // Use button 1 to toggle +4 mode
+        if (chk_buttons(1)){mode ^= 0x0F;}
+ 510:	0f e0       	ldi	r16, 0x0F	; 15
+ 512:	50 2e       	mov	r5, r16
+        // Shortcut for resetting the count
+        if (chk_buttons(7)){count = 0;}
+
+        // Shortcut for getting to the other end 
+        // of the count
+        if (chk_buttons(6)){count = 1020;}
+ 514:	8c ef       	ldi	r24, 0xFC	; 252
+ 516:	a8 2e       	mov	r10, r24
+ 518:	83 e0       	ldi	r24, 0x03	; 3
+ 51a:	b8 2e       	mov	r11, r24
+
+        if (chk_buttons(5)){bright_step = 0x00;}
+
+        if (chk_buttons(4)){bright_step = 0x79;}
+ 51c:	99 e7       	ldi	r25, 0x79	; 121
+ 51e:	69 2e       	mov	r6, r25
+ 520:	58 c0       	rjmp	.+176    	; 0x5d2 <main+0x100>
+
+        switch(mode){
+ 522:	40 3f       	cpi	r20, 0xF0	; 240
+ 524:	09 f4       	brne	.+2      	; 0x528 <main+0x56>
+ 526:	12 c1       	rjmp	.+548    	; 0x74c <main+0x27a>
+ 528:	4f 3f       	cpi	r20, 0xFF	; 255
+ 52a:	09 f4       	brne	.+2      	; 0x52e <main+0x5c>
+                break;
+            case 0xF0:
+                modifier = 0x02;
+                break;
+            case 0xFF:
+                modifier = 0x00;
+ 52c:	71 2c       	mov	r7, r1
+                break;
+        }
+
+        // Disable pushbuttons
+        PORTC |= (1<<PC0);
+ 52e:	a8 9a       	sbi	0x15, 0	; 21
+
+
+        // Send the mode indicator to the bar graph and poll the encoders
+        encoders = serial_update(mode);
+ 530:	84 2f       	mov	r24, r20
+ 532:	49 83       	std	Y+1, r20	; 0x01
+ 534:	0e 94 81 00 	call	0x102	; 0x102 <serial_update>
+
+        // Decode the encoder pattern into clockwise or counter-clockwise
+        // rotation and modify the count accordingly
+        decode_enc(encoders,modifier);
+ 538:	67 2d       	mov	r22, r7
+ 53a:	0e 94 eb 00 	call	0x1d6	; 0x1d6 <decode_enc>
+
+        // Decode the count into base-10 numbers and prepare them for display
+        // on the 7-segment display
+        segsum(count);
+ 53e:	80 91 91 01 	lds	r24, 0x0191
+ 542:	90 91 92 01 	lds	r25, 0x0192
+ 546:	0e 94 b1 00 	call	0x162	; 0x162 <segsum>
+
+        // Set PORTA to output
+        DDRA = 0xFF;
+ 54a:	3a ba       	out	0x1a, r3	; 26
+
+        // Select Right-most digit
+        PORTB &= ~((1<<PB6)|(1<<PB5)|(1<<PB4));
+ 54c:	88 b3       	in	r24, 0x18	; 24
+ 54e:	8f 78       	andi	r24, 0x8F	; 143
+ 550:	88 bb       	out	0x18, r24	; 24
+        PORTA = seg_digits[segment_data[0]];
+ 552:	e0 91 8c 01 	lds	r30, 0x018C
+ 556:	f0 e0       	ldi	r31, 0x00	; 0
+ 558:	e0 50       	subi	r30, 0x00	; 0
+ 55a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 55c:	80 81       	ld	r24, Z
+ 55e:	8b bb       	out	0x1b, r24	; 27
+ 560:	8f ec       	ldi	r24, 0xCF	; 207
+ 562:	97 e0       	ldi	r25, 0x07	; 7
+ 564:	01 97       	sbiw	r24, 0x01	; 1
+ 566:	f1 f7       	brne	.-4      	; 0x564 <main+0x92>
+ 568:	00 c0       	rjmp	.+0      	; 0x56a <main+0x98>
+ 56a:	00 00       	nop
+        _delay_us(SHOW_TIME);
+
+        // Select Second to right digit
+        PORTB |= (1<<PB4);
+ 56c:	c4 9a       	sbi	0x18, 4	; 24
+        PORTA = seg_digits[segment_data[1]];
+ 56e:	e0 91 8d 01 	lds	r30, 0x018D
+ 572:	f0 e0       	ldi	r31, 0x00	; 0
+ 574:	e0 50       	subi	r30, 0x00	; 0
+ 576:	ff 4f       	sbci	r31, 0xFF	; 255
+ 578:	80 81       	ld	r24, Z
+ 57a:	8b bb       	out	0x1b, r24	; 27
+ 57c:	8f ec       	ldi	r24, 0xCF	; 207
+ 57e:	97 e0       	ldi	r25, 0x07	; 7
+ 580:	01 97       	sbiw	r24, 0x01	; 1
+ 582:	f1 f7       	brne	.-4      	; 0x580 <main+0xae>
+ 584:	00 c0       	rjmp	.+0      	; 0x586 <main+0xb4>
+ 586:	00 00       	nop
+        _delay_us(SHOW_TIME);
+
+        // Select second to left digit
+        PORTB |= (1<<PB5) | (1<<PB4);
+ 588:	88 b3       	in	r24, 0x18	; 24
+ 58a:	80 63       	ori	r24, 0x30	; 48
+ 58c:	88 bb       	out	0x18, r24	; 24
+        PORTA = seg_digits[segment_data[3]];
+ 58e:	e0 91 8f 01 	lds	r30, 0x018F
+ 592:	f0 e0       	ldi	r31, 0x00	; 0
+ 594:	e0 50       	subi	r30, 0x00	; 0
+ 596:	ff 4f       	sbci	r31, 0xFF	; 255
+ 598:	80 81       	ld	r24, Z
+ 59a:	8b bb       	out	0x1b, r24	; 27
+ 59c:	8f ec       	ldi	r24, 0xCF	; 207
+ 59e:	97 e0       	ldi	r25, 0x07	; 7
+ 5a0:	01 97       	sbiw	r24, 0x01	; 1
+ 5a2:	f1 f7       	brne	.-4      	; 0x5a0 <main+0xce>
+ 5a4:	00 c0       	rjmp	.+0      	; 0x5a6 <main+0xd4>
+ 5a6:	00 00       	nop
+        _delay_us(SHOW_TIME);
+
+        // Select left-most digit
+        PORTB &= ~((1<<PB5)|(1<<PB4));
+ 5a8:	88 b3       	in	r24, 0x18	; 24
+ 5aa:	8f 7c       	andi	r24, 0xCF	; 207
+ 5ac:	88 bb       	out	0x18, r24	; 24
+        PORTB |= (1<<PB6);
+ 5ae:	c6 9a       	sbi	0x18, 6	; 24
+        PORTA = seg_digits[segment_data[4]];
+ 5b0:	e0 91 90 01 	lds	r30, 0x0190
+ 5b4:	f0 e0       	ldi	r31, 0x00	; 0
+ 5b6:	e0 50       	subi	r30, 0x00	; 0
+ 5b8:	ff 4f       	sbci	r31, 0xFF	; 255
+ 5ba:	80 81       	ld	r24, Z
+ 5bc:	8b bb       	out	0x1b, r24	; 27
+ 5be:	8f ec       	ldi	r24, 0xCF	; 207
+ 5c0:	97 e0       	ldi	r25, 0x07	; 7
+ 5c2:	01 97       	sbiw	r24, 0x01	; 1
+ 5c4:	f1 f7       	brne	.-4      	; 0x5c2 <main+0xf0>
+ 5c6:	00 c0       	rjmp	.+0      	; 0x5c8 <main+0xf6>
+ 5c8:	00 00       	nop
+        _delay_us(SHOW_TIME);
+
+        PORTB |= (1<<PB6) | (1<<PB5) | (1<<PB4);
+ 5ca:	88 b3       	in	r24, 0x18	; 24
+ 5cc:	80 67       	ori	r24, 0x70	; 112
+ 5ce:	88 bb       	out	0x18, r24	; 24
+    }
+ 5d0:	49 81       	ldd	r20, Y+1	; 0x01
+    uint8_t mode = 0x00;
+    uint8_t modifier;
+
+    while(1){
+
+        DDRA = 0x00;
+ 5d2:	1a ba       	out	0x1a, r1	; 26
+        PORTA = 0xFF;
+ 5d4:	3b ba       	out	0x1b, r3	; 27
+        PORTC &= ~(1<<PC0);
+ 5d6:	a8 98       	cbi	0x15, 0	; 21
+ 5d8:	25 e3       	ldi	r18, 0x35	; 53
+ 5da:	2a 95       	dec	r18
+ 5dc:	f1 f7       	brne	.-4      	; 0x5da <main+0x108>
+ 5de:	00 00       	nop
+        _delay_us(10);
+        if (bright_step > 0x79){bright_step = bright_step - 0x79;}
+ 5e0:	e0 91 11 01 	lds	r30, 0x0111
+ 5e4:	ea 37       	cpi	r30, 0x7A	; 122
+ 5e6:	18 f0       	brcs	.+6      	; 0x5ee <main+0x11c>
+ 5e8:	e9 57       	subi	r30, 0x79	; 121
+ 5ea:	e0 93 11 01 	sts	0x0111, r30
+        OCR2 = BRIGHTNESS[bright_step];
+ 5ee:	f0 e0       	ldi	r31, 0x00	; 0
+ 5f0:	ee 5e       	subi	r30, 0xEE	; 238
+ 5f2:	fe 4f       	sbci	r31, 0xFE	; 254
+ 5f4:	80 81       	ld	r24, Z
+ 5f6:	83 bd       	out	0x23, r24	; 35
+
+    // Button states
+    static uint16_t state[] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+    // Check the button's state
+    state[button] = (state[button] << 1) | (!bit_is_clear(PINA, button)) | 0xE000;
+ 5f8:	29 b3       	in	r18, 0x19	; 25
+ 5fa:	80 91 9b 01 	lds	r24, 0x019B
+ 5fe:	90 91 9c 01 	lds	r25, 0x019C
+ 602:	88 0f       	add	r24, r24
+ 604:	99 1f       	adc	r25, r25
+ 606:	90 6e       	ori	r25, 0xE0	; 224
+ 608:	21 70       	andi	r18, 0x01	; 1
+ 60a:	2a 83       	std	Y+2, r18	; 0x02
+ 60c:	1b 82       	std	Y+3, r1	; 0x03
+ 60e:	2a 81       	ldd	r18, Y+2	; 0x02
+ 610:	3b 81       	ldd	r19, Y+3	; 0x03
+ 612:	82 2b       	or	r24, r18
+ 614:	93 2b       	or	r25, r19
+ 616:	90 93 9c 01 	sts	0x019C, r25
+ 61a:	80 93 9b 01 	sts	0x019B, r24
+
+    // If the button has been pressed the last 12 times it has been checked, return true
+    if (state[button] == 0xF000){return 1;}
+ 61e:	81 15       	cp	r24, r1
+ 620:	90 4f       	sbci	r25, 0xF0	; 240
+ 622:	09 f4       	brne	.+2      	; 0x626 <main+0x154>
+ 624:	91 c0       	rjmp	.+290    	; 0x748 <main+0x276>
+
+    // Button states
+    static uint16_t state[] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+    // Check the button's state
+    state[button] = (state[button] << 1) | (!bit_is_clear(PINA, button)) | 0xE000;
+ 626:	29 b3       	in	r18, 0x19	; 25
+ 628:	80 91 9d 01 	lds	r24, 0x019D
+ 62c:	90 91 9e 01 	lds	r25, 0x019E
+ 630:	88 0f       	add	r24, r24
+ 632:	99 1f       	adc	r25, r25
+ 634:	90 6e       	ori	r25, 0xE0	; 224
+ 636:	21 fb       	bst	r18, 1
+ 638:	00 27       	eor	r16, r16
+ 63a:	00 f9       	bld	r16, 0
+ 63c:	10 e0       	ldi	r17, 0x00	; 0
+ 63e:	80 2b       	or	r24, r16
+ 640:	91 2b       	or	r25, r17
+ 642:	90 93 9e 01 	sts	0x019E, r25
+ 646:	80 93 9d 01 	sts	0x019D, r24
+
+    // If the button has been pressed the last 12 times it has been checked, return true
+    if (state[button] == 0xF000){return 1;}
+ 64a:	81 15       	cp	r24, r1
+ 64c:	90 4f       	sbci	r25, 0xF0	; 240
+ 64e:	09 f4       	brne	.+2      	; 0x652 <main+0x180>
+ 650:	79 c0       	rjmp	.+242    	; 0x744 <main+0x272>
+
+    // Button states
+    static uint16_t state[] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+    // Check the button's state
+    state[button] = (state[button] << 1) | (!bit_is_clear(PINA, button)) | 0xE000;
+ 652:	29 b3       	in	r18, 0x19	; 25
+ 654:	80 91 a9 01 	lds	r24, 0x01A9
+ 658:	90 91 aa 01 	lds	r25, 0x01AA
+ 65c:	88 0f       	add	r24, r24
+ 65e:	99 1f       	adc	r25, r25
+ 660:	bc 01       	movw	r22, r24
+ 662:	70 6e       	ori	r23, 0xE0	; 224
+ 664:	82 2f       	mov	r24, r18
+ 666:	90 e0       	ldi	r25, 0x00	; 0
+ 668:	9c 01       	movw	r18, r24
+ 66a:	22 0f       	add	r18, r18
+ 66c:	23 2f       	mov	r18, r19
+ 66e:	22 1f       	adc	r18, r18
+ 670:	33 0b       	sbc	r19, r19
+ 672:	cb 01       	movw	r24, r22
+ 674:	82 2b       	or	r24, r18
+ 676:	93 2b       	or	r25, r19
+ 678:	90 93 aa 01 	sts	0x01AA, r25
+ 67c:	80 93 a9 01 	sts	0x01A9, r24
+
+    // If the button has been pressed the last 12 times it has been checked, return true
+    if (state[button] == 0xF000){return 1;}
+ 680:	81 15       	cp	r24, r1
+ 682:	90 4f       	sbci	r25, 0xF0	; 240
+ 684:	09 f4       	brne	.+2      	; 0x688 <main+0x1b6>
+ 686:	59 c0       	rjmp	.+178    	; 0x73a <main+0x268>
+
+    // Button states
+    static uint16_t state[] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+    // Check the button's state
+    state[button] = (state[button] << 1) | (!bit_is_clear(PINA, button)) | 0xE000;
+ 688:	29 b3       	in	r18, 0x19	; 25
+ 68a:	80 91 a7 01 	lds	r24, 0x01A7
+ 68e:	90 91 a8 01 	lds	r25, 0x01A8
+ 692:	88 0f       	add	r24, r24
+ 694:	99 1f       	adc	r25, r25
+ 696:	90 6e       	ori	r25, 0xE0	; 224
+ 698:	26 fb       	bst	r18, 6
+ 69a:	ee 24       	eor	r14, r14
+ 69c:	e0 f8       	bld	r14, 0
+ 69e:	f1 2c       	mov	r15, r1
+ 6a0:	8e 29       	or	r24, r14
+ 6a2:	9f 29       	or	r25, r15
+ 6a4:	90 93 a8 01 	sts	0x01A8, r25
+ 6a8:	80 93 a7 01 	sts	0x01A7, r24
+
+    // If the button has been pressed the last 12 times it has been checked, return true
+    if (state[button] == 0xF000){return 1;}
+ 6ac:	81 15       	cp	r24, r1
+ 6ae:	90 4f       	sbci	r25, 0xF0	; 240
+ 6b0:	09 f4       	brne	.+2      	; 0x6b4 <main+0x1e2>
+ 6b2:	3e c0       	rjmp	.+124    	; 0x730 <main+0x25e>
+
+    // Button states
+    static uint16_t state[] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+    // Check the button's state
+    state[button] = (state[button] << 1) | (!bit_is_clear(PINA, button)) | 0xE000;
+ 6b4:	29 b3       	in	r18, 0x19	; 25
+ 6b6:	80 91 a5 01 	lds	r24, 0x01A5
+ 6ba:	90 91 a6 01 	lds	r25, 0x01A6
+ 6be:	88 0f       	add	r24, r24
+ 6c0:	99 1f       	adc	r25, r25
+ 6c2:	90 6e       	ori	r25, 0xE0	; 224
+ 6c4:	25 fb       	bst	r18, 5
+ 6c6:	cc 24       	eor	r12, r12
+ 6c8:	c0 f8       	bld	r12, 0
+ 6ca:	d1 2c       	mov	r13, r1
+ 6cc:	8c 29       	or	r24, r12
+ 6ce:	9d 29       	or	r25, r13
+ 6d0:	90 93 a6 01 	sts	0x01A6, r25
+ 6d4:	80 93 a5 01 	sts	0x01A5, r24
+
+    // If the button has been pressed the last 12 times it has been checked, return true
+    if (state[button] == 0xF000){return 1;}
+ 6d8:	81 15       	cp	r24, r1
+ 6da:	90 4f       	sbci	r25, 0xF0	; 240
+ 6dc:	31 f1       	breq	.+76     	; 0x72a <main+0x258>
+
+    // Button states
+    static uint16_t state[] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+    // Check the button's state
+    state[button] = (state[button] << 1) | (!bit_is_clear(PINA, button)) | 0xE000;
+ 6de:	89 b3       	in	r24, 0x19	; 25
+ 6e0:	20 91 a3 01 	lds	r18, 0x01A3
+ 6e4:	30 91 a4 01 	lds	r19, 0x01A4
+ 6e8:	22 0f       	add	r18, r18
+ 6ea:	33 1f       	adc	r19, r19
+ 6ec:	30 6e       	ori	r19, 0xE0	; 224
+ 6ee:	84 fb       	bst	r24, 4
+ 6f0:	88 24       	eor	r8, r8
+ 6f2:	80 f8       	bld	r8, 0
+ 6f4:	91 2c       	mov	r9, r1
+ 6f6:	28 29       	or	r18, r8
+ 6f8:	39 29       	or	r19, r9
+ 6fa:	30 93 a4 01 	sts	0x01A4, r19
+ 6fe:	20 93 a3 01 	sts	0x01A3, r18
+
+    // If the button has been pressed the last 12 times it has been checked, return true
+    if (state[button] == 0xF000){return 1;}
+ 702:	21 15       	cp	r18, r1
+ 704:	30 4f       	sbci	r19, 0xF0	; 240
+ 706:	51 f0       	breq	.+20     	; 0x71c <main+0x24a>
+
+        if (chk_buttons(5)){bright_step = 0x00;}
+
+        if (chk_buttons(4)){bright_step = 0x79;}
+
+        switch(mode){
+ 708:	4f 30       	cpi	r20, 0x0F	; 15
+ 70a:	61 f0       	breq	.+24     	; 0x724 <main+0x252>
+ 70c:	40 31       	cpi	r20, 0x10	; 16
+ 70e:	08 f0       	brcs	.+2      	; 0x712 <main+0x240>
+ 710:	08 cf       	rjmp	.-496    	; 0x522 <main+0x50>
+ 712:	41 11       	cpse	r20, r1
+ 714:	0c cf       	rjmp	.-488    	; 0x52e <main+0x5c>
+            case 0x00:
+                modifier = 0x01;
+ 716:	77 24       	eor	r7, r7
+ 718:	73 94       	inc	r7
+ 71a:	09 cf       	rjmp	.-494    	; 0x52e <main+0x5c>
+        // of the count
+        if (chk_buttons(6)){count = 1020;}
+
+        if (chk_buttons(5)){bright_step = 0x00;}
+
+        if (chk_buttons(4)){bright_step = 0x79;}
+ 71c:	60 92 11 01 	sts	0x0111, r6
+
+        switch(mode){
+ 720:	4f 30       	cpi	r20, 0x0F	; 15
+ 722:	a1 f7       	brne	.-24     	; 0x70c <main+0x23a>
+            case 0x00:
+                modifier = 0x01;
+                break;
+            case 0x0F:
+                modifier = 0x04;
+ 724:	94 e0       	ldi	r25, 0x04	; 4
+ 726:	79 2e       	mov	r7, r25
+                break;
+ 728:	02 cf       	rjmp	.-508    	; 0x52e <main+0x5c>
+
+        // Shortcut for getting to the other end 
+        // of the count
+        if (chk_buttons(6)){count = 1020;}
+
+        if (chk_buttons(5)){bright_step = 0x00;}
+ 72a:	10 92 11 01 	sts	0x0111, r1
+ 72e:	d7 cf       	rjmp	.-82     	; 0x6de <main+0x20c>
+        // Shortcut for resetting the count
+        if (chk_buttons(7)){count = 0;}
+
+        // Shortcut for getting to the other end 
+        // of the count
+        if (chk_buttons(6)){count = 1020;}
+ 730:	b0 92 92 01 	sts	0x0192, r11
+ 734:	a0 92 91 01 	sts	0x0191, r10
+ 738:	bd cf       	rjmp	.-134    	; 0x6b4 <main+0x1e2>
+
+        // Use button 1 to toggle +4 mode
+        if (chk_buttons(1)){mode ^= 0x0F;}
+
+        // Shortcut for resetting the count
+        if (chk_buttons(7)){count = 0;}
+ 73a:	10 92 92 01 	sts	0x0192, r1
+ 73e:	10 92 91 01 	sts	0x0191, r1
+ 742:	a2 cf       	rjmp	.-188    	; 0x688 <main+0x1b6>
+
+        // Use button 0 to toggle +2 mode
+        if (chk_buttons(0)){mode ^= 0xF0;}
+
+        // Use button 1 to toggle +4 mode
+        if (chk_buttons(1)){mode ^= 0x0F;}
+ 744:	45 25       	eor	r20, r5
+ 746:	85 cf       	rjmp	.-246    	; 0x652 <main+0x180>
+        _delay_us(10);
+        if (bright_step > 0x79){bright_step = bright_step - 0x79;}
+        OCR2 = BRIGHTNESS[bright_step];
+
+        // Use button 0 to toggle +2 mode
+        if (chk_buttons(0)){mode ^= 0xF0;}
+ 748:	44 25       	eor	r20, r4
+ 74a:	6d cf       	rjmp	.-294    	; 0x626 <main+0x154>
+                break;
+            case 0x0F:
+                modifier = 0x04;
+                break;
+            case 0xF0:
+                modifier = 0x02;
+ 74c:	82 e0       	ldi	r24, 0x02	; 2
+ 74e:	78 2e       	mov	r7, r24
+                break;
+ 750:	ee ce       	rjmp	.-548    	; 0x52e <main+0x5c>
+
+00000752 <_exit>:
+ 752:	f8 94       	cli
+
+00000754 <__stop_program>:
+ 754:	ff cf       	rjmp	.-2      	; 0x754 <__stop_program>
